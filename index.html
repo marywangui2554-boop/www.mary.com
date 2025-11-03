@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: bisque;
+        text-align: center;
+        text-decoration: wavy;
+    }
+    .Login-box{
+        background-color: lab(39.63% 65.2 -40.71);
+        color: azure;
+        padding: 30px;
+        border-radius: 12px;
+        width: 1000px;
+        box-shadow: hsl(128, 43%, 35%);
+        text-align: center;
+        margin: 100px auto;
+    }
+</style>
+<body>
+    <div class="Login-box">
+          <b style="font-family: fantasy;color: rgb(81, 70, 141);font-size: 48px;">
+            LOGIN 
+        </b>
+    
+        <form id="loginForm">
+            <label id="emaillabel" style="color: #00ff22;font-size: 36px;">Email </label>
+            <input type="email"name="email"><br><br>
+            <label id="Passwordlabel" style="color: #00ff22;font-size: 36px;">Password</label>
+            <input type="password"name="password"><br><br>
+            <button type style="color: hsl(0, 94%, 51%);font-size: medium;"submit>LOGIN</button>
+            <p><a href="#">Forgot Password</a></p>
+            <button type="button"id="forgotBtwn">Forgot Password?</button>
+            </form>
+            <p id="message"></p>
+        </div>
+        <script>
+document.getElementById("loginForm").addEventListener("submit", function(event){
+  event.preventDefault();
+
+  let email = document.getElementById("emaillabel").value;
+  let password = document.getElementById("Passwordlabel").value;
+  let message = document.getElementById("message");
+
+  // Example login check
+  if (email === "mary@gmail.com" && password === "1234") {
+    message.textContent = "✅ Login successful! Welcome, " + email;
+    message.style.color = "green";
+  } 
+  else if (email === "mary@gmail.com" && password !== "1234") {
+    message.textContent = "❌ Incorrect password. Try again or click 'Forgot Password'.";
+    message.style.color = "red";
+  } 
+  else {
+    message.textContent = "⚠ Email not recognized. Please register first.";
+    message.style.color = "orange";
+  }
+});
+</script>
+
+</body>
+</html>
